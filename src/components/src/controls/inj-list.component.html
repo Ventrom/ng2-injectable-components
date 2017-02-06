@@ -1,0 +1,7 @@
+<div class="ui relaxed divided list">
+  <div *ngFor="let model of models; let i = index" class="item">
+      <div class="right floated content"><i class="ui remove icon" (click)="delRow(i)"></i></div>
+      <inject-component class="ijc" [componentData]="model" (valueChange)="componentChange($event);"></inject-component>
+  </div>
+</div>
+<button class="ui button" (click)="addRow()">Add</button>

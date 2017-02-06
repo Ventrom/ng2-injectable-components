@@ -1,0 +1,57 @@
+:host {
+    width: 15vw;
+    height: 5vh;
+}
+
+.slider-control-group {
+    vertical-align: middle;
+}
+
+.slider-control-button {
+    width: 3vw;
+    height: 3vw;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 1vh;
+    border: 1px solid white;
+    font-size: 3vw;
+    font-weight: bold;
+    line-height: 2.5vw;
+    color: white;
+    cursor: pointer;
+    text-align: center;
+    vertical-align: middle;
+    margin-left: 0.5vw;
+    margin-right: 0.5vw;
+}
+
+.slider-control-button:active {
+  transform: translateY(0.1vw);
+  filter: drop-shadow(0px 0px 2px green);
+}
+.slider-control-button.decrement {
+    float: left;
+}
+
+.slider-control {
+    float: left;
+}
+
+.slider-control-button.increment {
+    float: left;
+}
+
+.slider-control-value {
+    width: 8.5vw;
+    float: right;
+    font-size: 1.5vw;
+    color: white;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 2.5vw;
+    margin-right: 0.5vw;
+}
+
+.slider .bg-bar {
+    fill: transparent;
+    stroke: none;
+}

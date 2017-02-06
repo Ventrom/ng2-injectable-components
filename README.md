@@ -19,7 +19,7 @@ https://Ventrom.github.io/Ventrom/ng2-injectable-components/demo/
 
 ## About
 
-A project to inject Angular2 components in other components
+A project to inject components into other Angular2 components
 
 ## Installation
 

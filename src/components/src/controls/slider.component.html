@@ -1,0 +1,6 @@
+<div class="slider-control-group">
+    <div class="slider-control-button decrement" (click)="dec()">-</div>
+    <div #slider class="slider-control"></div>
+    <div class="slider-control-button increment" (click)="inc()">+</div>
+    <div class="slider-control-value" [attr.data-value]="config.value">{{config.value}} {{config.units}}</div>
+</div>
