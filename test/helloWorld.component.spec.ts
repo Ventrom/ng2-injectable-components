@@ -4,23 +4,23 @@ import {
   TestBed
 } from '@angular/core/testing';
 import {expect} from 'chai';
-import {HelloWorld} from './../src/helloWorld.component';
+import {DashboardComponent} from './../src/dashboard.component';
 import {SliderComponent} from './../src/components/src/controls/slider.component'
 import {InjectableComponent, InjectableListComponent} from './../src/components/src/controls/injectables.component'
-import {ComponentsModule} from '../src';
+import {InjectablesModule} from '../src';
 
 describe('hello-world component', () => {
 
-  let fixture: ComponentFixture<HelloWorld>
+  let fixture: ComponentFixture<DashboardComponent>
 
   beforeEach(() => {
     TestBed.configureTestingModule({
       //imports: [ComponentsModule]
       declarations: [
-        HelloWorld,
-        SliderComponent//,
-        //InjectableComponent,
-        //InjectableListComponent
+        DashboardComponent,
+        SliderComponent,
+        InjectableComponent,
+        InjectableListComponent
       ]
       /*declarations: [
         HelloWorld
@@ -47,7 +47,7 @@ describe('hello-world component', () => {
     });
 
     TestBed.compileComponents().then(() => {
-      const fixture = TestBed.createComponent(HelloWorld);
+      const fixture = TestBed.createComponent(DashboardComponent);
 
       // Access the element
       const element = fixture.nativeElement;
@@ -55,7 +55,7 @@ describe('hello-world component', () => {
       // Detect changes as necessary
       fixture.detectChanges();
 
-      expect(fixture.nativeElement.innerHTML.trim()).to.equal('Hello world from the Angular2 Injectable Components module!');
+      expect(fixture.nativeElement.innerHTML.trim()).not.to.equal('Hello world from the Angular2 Injectable Components module!');
     });
   });
 });

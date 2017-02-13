@@ -1,11 +1,12 @@
 import { Component, Input, OnInit, SimpleChanges, DoCheck, KeyValueDiffers, ViewContainerRef, ViewChild,
          ReflectiveInjector, ComponentFactoryResolver, KeyValueChangeRecord, ComponentRef, ChangeDetectorRef, KeyValueDiffer } from '@angular/core'
-import { Injectables } from '../../../components.module'
+import { Injectables } from '../../../injectables.module'
 
 @Component({
   selector: 'inj-list',
   templateUrl: './inj-list.component.html',
-  styleUrls: ['../../../../semanticui/dist/semantic.min.css', './inj-list.component.css'],
+  //styles: [require('css!../../../../semanticui/dist/semantic.min.css'), require('css!./inj-list.component.css')],
+  styleUrls: ['./inj-list.component.scss']
 })
 export class InjectableListComponent implements OnInit, DoCheck {
     @Input() component: any
@@ -30,8 +31,8 @@ export class InjectableListComponent implements OnInit, DoCheck {
         this.models.forEach((m) => { tmpInputs.push(m.inputs.config) })
         var changes = this.differ.diff(this.models)
 
+        // If any change occurred
         if (changes) {
-            console.log('changes detected')
             changes.forEachChangedItem((r: KeyValueChangeRecord) => {
                 console.log('Changed ')
                 console.log(r.currentValue.inputs)
@@ -44,8 +45,6 @@ export class InjectableListComponent implements OnInit, DoCheck {
                 console.log('Removed ')
                 console.log(r.currentValue.inputs)
             })
-        } else {
-            console.log('Nothing changed')
         }
 
         tmpInputs.forEach((elt, i) => {

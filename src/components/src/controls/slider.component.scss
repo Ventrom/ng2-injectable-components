@@ -1,10 +1,7 @@
-:host {
-    width: 15vw;
-    height: 5vh;
-}
-
 .slider-control-group {
     vertical-align: middle;
+    height: 5vh;
+    width: 33vw;
 }
 
 .slider-control-button {
@@ -34,6 +31,8 @@
 
 .slider-control {
     float: left;
+    width: 15vw;
+    height: 5vh;
 }
 
 .slider-control-button.increment {
@@ -54,4 +53,16 @@
 .slider .bg-bar {
     fill: transparent;
     stroke: none;
+}
+
+.fill-bar {
+    fill: white;
+}
+
+.handle {
+    fill: whitesmoke;
+}
+
+.scale g.tick {
+    fill: white;
 }
