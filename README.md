@@ -28,51 +28,71 @@ Install through npm:
 npm install --save ng2-injectable-components
 ```
 
-Then use it in your app like so:
+To use the services module, first import it in your app:
 
 ```typescript
-import {Component} from '@angular/core';
-import {HelloWorld} from 'ng2-injectable-components';
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { InjectablesModule } from 'ng2-injectable-components';
+import { AppComponent } from './app.component';
+
+@NgModule({
+    declarations: [
+        AppComponent
+    ],
+    imports: [
+        BrowserModule,
+        InjectablesModule
+    ],
+    declarations: [],
+    bootstrap:    [ AppComponent ]
+})
+export class AppModule {}
+```
+
+Then you can use the injectable components inside a component, for example in the template:
+
+```html
+<inj-list [component]="injectableType" [defaults]="getSliderDefaults()" [(models)]="injectableModels"></inj-list>
+
+```
+
+and in the component:
+
+```typescript
+import { Component } from '@angular/core';
+import { SliderConfig, SliderComponent } from 'ng2-injectable-components';
 
 @Component({
-  selector: 'demo-app',
-  directives: [HelloWorld],
-  template: '<hello-world></hello-world>'
+    selector: 'app-root',
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.css']
 })
-export class DemoApp {}
-```
+export class AppComponent {
+    injectableType: any = SliderComponent;
+    injectableModels: Array<any> = [];
+    private sliderParams: SliderConfig = new SliderConfig({
+                                      min: 5,
+                                      max: 50,
+                                      step: 5,
+                                      value: 20,
+                                      units: 'hrs'});
 
-You may also find it useful to view the [demo source](https://github.com/Ventrom/Ventrom/ng2-injectable-components/blob/master/demo/demo.ts).
-
-### Usage without a module bundler
-```
-<script src="node_modules/dist/umd/ng2-injectable-components/ng2-injectable-components.js"></script>
-<script>
-    // everything is exported InjectableComponents namespace
-</script>
+    getSliderDefaults() {
+        return {config: this.sliderParams}
+    }
+}
 ```
 
 ## Documentation
 All documentation is auto-generated from the source via typedoc and can be viewed here:
-https://Ventrom.github.io/Ventrom/ng2-injectable-components/docs/
+https://Ventrom.github.io/Ventrom/ng2-message-service/docs/
 
 ## Development
 
 ### Prepare your environment
 * Install [Node.js](http://nodejs.org/) and NPM (should come with)
 * Install local dev dependencies: `npm install` while current directory is this repo
-
-### Development server
-Run `npm start` to start a development server on port 8000 with auto reload + tests.
-
-### Testing
-Run `npm test` to run tests once or `npm run test:watch` to continually run tests.
-
-### Release
-* Bump the version in package.json (once the module hits 1.0 this will become automatic)
-```bash
-npm run release
-```
 
 ## License
 
