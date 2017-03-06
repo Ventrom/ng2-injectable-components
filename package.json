@@ -1,21 +1,21 @@
 {
   "name": "ng2-injectable-components",
-  "version": "2.1.2",
-  "description": "A project to inject components into other Angular2 components",
+  "version": "1.0.0",
+  "description": "A collection of UI patterns that can be injected with other Angular components",
   "main": "index.ts",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Ventrom/Ventrom/ng2-injectable-components.git"
+    "url": "git+https://github.com/Ventrom/ng2-injectable-components.git"
   },
   "keywords": [
-    "angular2"
+    "angular"
   ],
   "author": "Ventrom LLC",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Ventrom/Ventrom/ng2-injectable-components/issues"
+    "url": "https://github.com/Ventrom/ng2-injectable-components/issues"
   },
-  "homepage": "https://github.com/Ventrom/Ventrom/ng2-injectable-components#readme",
+  "homepage": "https://github.com/Ventrom/ng2-injectable-components#readme",
   "dependencies": {
     "@angular/common": "^2.4.4",
     "@angular/core": "^2.4.4",

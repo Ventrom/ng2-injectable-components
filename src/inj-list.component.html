@@ -1,0 +1,7 @@
+<div class="ui relaxed divided list">
+  <div *ngFor="let data of componentData; let i = index" class="item">
+      <div class="right floated middle aligned action content"><i class="ui big remove icon" (click)="delRow(i)"></i></div>
+      <div class="middle aligned injected content"><inject-component [componentData]="data"></inject-component></div>
+  </div>
+</div>
+<button class="ui basic inverted newitem icon button" (click)="addRow()"><i class="big plus icon"></i></button>
